@@ -1,7 +1,5 @@
 package ru.netology.smartHomeSystem;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -23,7 +21,6 @@ class RadioTest {
 
     })
     void testSetPosition(String test, int currentPosition, int expected) {
-//        Radio exemplarRadio = new Radio();
         exemplarRadio.setCurrentPosition(currentPosition);
         int actual = exemplarRadio.getCurrentPosition();
         assertEquals(expected, actual);
@@ -57,12 +54,10 @@ class RadioTest {
             "'Next position for current position 0', 0, 1" // граница
     })
     void testNextPosition(String test, int currentPosition, int expected) {
-//        Radio exemplarRadio = new Radio();
         exemplarRadio.setCurrentPosition(currentPosition);
         exemplarRadio.nextPosition();
         int actual = exemplarRadio.getCurrentPosition();
         assertEquals(expected, actual);
-//
     }
 
     @ParameterizedTest
@@ -78,9 +73,7 @@ class RadioTest {
         exemplarRadio.nextPosition();
         int actual = exemplarRadio.getCurrentPosition();
         assertEquals(expected, actual);
-//
     }
-
 
     @ParameterizedTest
     @CsvSource(value = {
@@ -91,12 +84,10 @@ class RadioTest {
             "'Prev position for current position 10', 10, 9" // 0-1
     })
     void testPrevPosition(String test, int currentPosition, int expected) {
-//        Radio exemplarRadio = new Radio();
         exemplarRadio.setCurrentPosition(currentPosition);
         exemplarRadio.prevPosition();
         int actual = exemplarRadio.getCurrentPosition();
         assertEquals(expected, actual);
-
     }
 
     @ParameterizedTest
@@ -112,18 +103,7 @@ class RadioTest {
         exemplarRadio.prevPosition();
         int actual = exemplarRadio.getCurrentPosition();
         assertEquals(expected, actual);
-
     }
-
-//    @Test
-//    void testSetVolume() {
-//        Radio exemplarRadio = new Radio();
-//        exemplarRadio.setCurrentVolume(3);
-//        int expected = 3;
-//        int actual = exemplarRadio.getCurrentVolume();
-//        assertEquals(expected, actual);
-//
-//    }
 
     @ParameterizedTest
     @CsvSource(value = {
@@ -132,15 +112,12 @@ class RadioTest {
             "'Next volume for current volume 100', 100, 100", // верхняя граница
             "'Next volume for current volume -1', -1, 1", // default + 1
             "'Next volume for current volume 101', 101, 1" // default + 1
-
     })
     void testNextVolume(String test, int currentPosition, int expected) {
-//        Radio exemplarRadio = new Radio();
         exemplarRadio.setCurrentVolume(currentPosition);
         exemplarRadio.nextVolume();
         int actual = exemplarRadio.getCurrentVolume();
         assertEquals(expected, actual);
-
     }
 
     @ParameterizedTest
@@ -152,12 +129,9 @@ class RadioTest {
             "'Prev volume for current volume 101', 101, 0", // default - 1
     })
     void testPrevVolume(String test, int currentPosition, int expected) {
-//        Radio exemplarRadio = new Radio();
         exemplarRadio.setCurrentVolume(currentPosition);
         exemplarRadio.prevVolume();
         int actual = exemplarRadio.getCurrentVolume();
         assertEquals(expected, actual);
-
     }
-
 }

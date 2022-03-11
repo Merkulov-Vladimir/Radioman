@@ -1,12 +1,16 @@
 package ru.netology.smartHomeSystem;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Radio {
     private int currentVolume;
     private int currentPosition;
     private int amtPosition = 10;
-
-    public Radio() {
-    }
 
     public Radio(int amtPosition) {
         this.amtPosition = amtPosition;
@@ -17,10 +21,6 @@ public class Radio {
             this.currentPosition = currentPosition;
         }
         return;
-    }
-
-    public int getCurrentPosition() {
-        return currentPosition;
     }
 
     public void nextPosition() {
@@ -45,10 +45,6 @@ public class Radio {
             this.currentVolume = currentVolume;
         }
         return;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void nextVolume() {
